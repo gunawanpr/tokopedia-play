@@ -298,7 +298,7 @@ Follow these steps to install and run the tokopedia-play:
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/gunawanpr/tokopedia-play.git
    ```
 
 2. Navigate to the project directory:
