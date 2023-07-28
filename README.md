@@ -52,7 +52,7 @@ As shown in the image above, the API structure is as follows:
 
 - `Database` is the database that will store the data using MongoDB
 
-inside the `Backend` there are 5 layers:
+inside the `Backend` there are 2 layers:
 
 `Routes:`
 the server responds to incoming client requests. They map URLs and HTTP methods to corresponding handler functions, which are executed when the request matches the defined route. Routes determine how the server handles different types of requests from clients.
