@@ -67,7 +67,7 @@ router.post('/videos/:id/comments', async (req, res) => {
             return res.status(400).json({message: error.message});
         }
 
-        if (!req.body.videoId || !req.body.username || !req.body.comment) {
+        if (!req.body.username || !req.body.comment) {
             return res.status(400).send('Semua data harus diisi dengan sesuai!');
         }
     
