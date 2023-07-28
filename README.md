@@ -319,4 +319,4 @@ Follow these steps to install and run the tokopedia-play:
    npm start
    ```
 
-5. Open your web browser and go to `http://localhost:3000` to view the API.
+5. You can use Postman or curl to perform tests for the Get and Post methods based on the provided list of APIs. Specifically, for the Post method, dummy JSON data is available for testing purposes.
