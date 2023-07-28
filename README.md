@@ -70,6 +70,220 @@ he representation of a data structure used in the application. It represents an 
 - `POST` http://localhost:3000/play/videos/:videoId/comments
 - `POST` http://localhost:3000/play/videos/:videoId/product
 
+### GET /play/videos
+
+This API will return a list of videos.
+
+- URL Params:
+  - None
+- Data Params:
+  - None
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```json
+  [
+    {
+      "_id": "String",
+      "videoId": "Number",
+      "urlImg": "String",
+      "comments": [
+        "String",
+        "String"
+      ],
+      "products": [
+        "String",
+        "String"
+      ],
+    }
+  ]
+  ```
+
+### GET /play/videos/:videoId
+
+This API will return a video with the specified id.
+
+- URL Params:
+  - required: `videoId=[String]`
+- Data Params:
+  - None
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```json
+  {
+    "_id": "String",
+    "videoId": "Number",
+    "urlImg": "String",
+    "comments": [
+      "String",
+      "String"
+    ],
+    "products": [
+      "String",
+      "String"
+    ],
+  }
+  ```
+
+- Error Response
+
+  - Code: 404
+  - Content:
+
+  ```json
+  {
+    "message": "Data yang dicari tidak ada!"
+  }
+  ```
+
+### GET /play/videos/:videoId/comments
+
+This API will return a list of comments that are related to the video with the specified id.
+
+- URL Params:
+  - required: `videoId=[String]`
+- Data Params:
+  - None
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```json
+  [
+    {
+      "_id": "String",
+      "videoId": "Number",
+      "username": "String",
+      "comment": "String",
+      "timestamp": "Date"
+    },
+    {
+      "_id": "String",
+      "videoId": "Number",
+      "username": "String",
+      "comment": "String",
+      "timestamp": "Date"
+    }
+  ]
+  ```
+
+### GET /play/videos/:videoId/product
+
+This API will return a list of product that are related to the video with the specified id.
+
+- URL Params:
+  - required: `videoId=[String]`
+- Data Params:
+  - None
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```json
+  [
+    {
+      "_id": "String",
+      "videoId": "Number",
+      "productId": "Number",
+      "urlProduct": "String",
+      "title": "String",
+      "price": "Number"
+    },
+    {
+      "_id": "String",
+      "videoId": "Number",
+      "productId": "Number",
+      "urlProduct": "String",
+      "title": "String",
+      "price": "Number"
+    }
+  ]
+  ```
+
+### POST play/videos/new
+
+This API will create a comment associated with the video with the specified id.
+
+- URL Params:
+  - required: 
+- Data Params:
+  ```json
+  {
+    "videoId": "Number",
+    "urlImg": "String"
+  }
+  ```
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```
+  Video ditambahkan!
+  ```
+
+  - Error Response
+
+  - Code: 400
+  - Content:
+
+  ```json
+  {
+    "message": "Semua data harus diisi dengan sesuai!"
+  }
+  ```
+
+### POST play/videos/:videoId/comments
+
+This API will create a comment associated with the video with the specified id.
+
+- URL Params:
+  - required: `videoId=[String]`
+- Data Params:
+  ```json
+  {
+    "username": "String",
+    "comment": "String"
+  }
+  ```
+- Headers:
+  - Content-Type: application/json
+- Success Response
+
+  - Code: 200
+  - Content:
+
+  ```
+  Komentar ditambahkan pada video 1!
+  ```
+
+  - Error Response
+
+  - Code: 400
+  - Content:
+
+  ```json
+  {
+    "message": "Semua data harus diisi dengan sesuai!"
+  }
+  ```
 
 ## Installation
 
